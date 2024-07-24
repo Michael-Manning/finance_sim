@@ -1,0 +1,90 @@
+
+{
+    "accounts":[
+        {
+            "name": "TFSA",
+            "initial_balance": 100000.0,
+            "interest": 7.0
+        },
+        {
+            "name": "HFSA",
+            "initial_balance": 32000.0,
+            "interest": 5.0
+        }
+    ],
+
+    "loans":[
+        {
+            "name": "Alberta_student_loan",
+            "initial_balance": 20000.0,
+            "interest": 7.95,
+            "contributes_net_worth": false
+        },
+        {
+            "name": "federal_student_loan",
+            "initial_balance": 10000.0,
+            "interest": 0.0,
+            "contributes_net_worth": false
+        },
+        {
+            "name": "car_loan",
+            "initial_balance": 15000,
+            "interest": 8.99,
+            "asset_name": "Bugatti",
+            "asset_initial_value": 20000,
+            "asset_appreciation": -10,
+            "contributes_net_worth": false
+        },
+        {
+            "name": "mortgage",
+            "initial_balance": 400000.0,
+            "interest": 5.99,
+            "asset_name": "house",
+            "asset_initial_value": 400000.0,
+            "asset_appreciation": 2.5,
+            "start_date": "04/2025",
+            "down_payment": {
+                "amount": 50000,
+                "sources": ["HFSA", "TFSA"]
+            },
+            "contributes_net_worth": true
+        }
+    ],
+
+    "monthly_contributions": [
+        ["car_loan", 1000],
+        ["Alberta_student_loan", 300],
+        ["federal_student_loan", 200],
+        ["mortgage", 2000]
+    ],
+
+    "monthly_costs": [
+        {
+            "name": "rent",
+            "amount": 1200,
+            "end_date": "04/2025"
+        },
+        {
+            "name": "property_tax_and_utilities",
+            "amount": 900,
+            "start_date": "04/2025"
+        }
+    ],
+
+    "one_time_transfers": [
+        {
+            "source": "TFSA",
+            "destination": "void",
+            "amount": 8000.0,
+            "date": "07/2025",
+            "description": "vacation"
+        }
+    ],    
+
+    "monthly_surplus": 8000,
+    "simulation_length_months": 120,
+    "leftover_contribution_account": "TFSA",
+
+    "export_excel": true,
+    "export_filename": "my_test.xlsx"
+}
